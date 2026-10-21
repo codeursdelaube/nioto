@@ -2,14 +2,14 @@
 // components/ui/Reveal.tsx
 // Wrapper qui applique une animation GSAP fade-up au scroll
 
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, ElementType, ReactNode } from "react";
 import { gsap, ScrollTrigger } from "@/lib/gsap";
 
 interface RevealProps {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
   delay?: number;
-  as?: keyof JSX.IntrinsicElements;
+  as?: ElementType;
 }
 
 export function Reveal({ children, className = "", delay = 0, as: Tag = "div" }: RevealProps) {

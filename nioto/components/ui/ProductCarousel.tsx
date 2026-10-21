@@ -2,7 +2,7 @@
 // components/ui/ProductCarousel.tsx
 // Swiper carousel des produits Queen's
 
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Keyboard, A11y, Autoplay } from "swiper/modules";
@@ -24,9 +24,38 @@ interface ProductCarouselProps {
 }
 
 export function ProductCarousel({ slides }: ProductCarouselProps) {
+  const [mounted, setMounted] = useState(false);
   const prevRef = useRef<HTMLButtonElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
   const [lightbox, setLightbox] = useState<Slide | null>(null);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return (
+      <div className="relative group">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 pb-10">
+          {slides.slice(0, 3).map((slide, i) => (
+            <div
+              key={i}
+              className="relative w-full overflow-hidden rounded-sm block bg-[var(--nioto-brun)]/5"
+              style={{ aspectRatio: "4/5" }}
+            >
+              <Image
+                src={slide.src}
+                alt={slide.alt}
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                className="object-cover"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <>
