@@ -91,8 +91,14 @@ export const metadata: Metadata = {
     images: ["/nioto_images/image_baniere.jpg"],
   },
   icons: {
-    icon: "/nioto_images/nioto_logo.jpg",
-    apple: "/nioto_images/nioto_logo.jpg",
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
+  },
+  verification: {
+    google: "google17a02779aeb61014",
   },
 };
 

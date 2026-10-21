@@ -11,6 +11,11 @@ export default function manifest(): MetadataRoute.Manifest {
     theme_color: "#183B2B",
     icons: [
       {
+        src: "/icon.svg",
+        sizes: "any",
+        type: "image/svg+xml",
+      },
+      {
         src: "/nioto_images/nioto_logo.jpg",
         sizes: "192x192",
         type: "image/jpeg",

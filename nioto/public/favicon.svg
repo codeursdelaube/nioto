@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#183B2B" />
+      <stop offset="1" stop-color="#0E2319" />
+    </linearGradient>
+    <linearGradient id="dropGrad" x1="20" y1="12" x2="44" y2="52" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFE082" />
+      <stop offset="0.35" stop-color="#E5A932" />
+      <stop offset="1" stop-color="#B87D14" />
+    </linearGradient>
+    <linearGradient id="shineGrad" x1="24" y1="22" x2="28" y2="40" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity="0.85" />
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0.15" />
+    </linearGradient>
+    <filter id="glow" x="12" y="8" width="40" height="48" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="2" stdDeviation="2.5" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <!-- Fond vert foncé NIOTO -->
+  <rect width="64" height="64" rx="16" fill="url(#bgGrad)" />
+  <rect x="0.75" y="0.75" width="62.5" height="62.5" rx="15.25" stroke="#C59B27" stroke-opacity="0.35" stroke-width="1.5" />
+
+  <!-- Goutte d'huile dorée précieuse -->
+  <g filter="url(#glow)">
+    <path d="M32 13 C32 13 19 28 19 38.5 C19 46 24.8 51.5 32 51.5 C39.2 51.5 45 46 45 38.5 C45 28 32 13 32 13 Z" fill="url(#dropGrad)" />
+    <!-- Reflet lumière -->
+    <path d="M24 35 C24 29.5 28.5 22 30.5 19.5" stroke="url(#shineGrad)" stroke-width="2.5" stroke-linecap="round" />
+    <circle cx="25.5" cy="41" r="1.5" fill="#FFFFFF" fill-opacity="0.7" />
+  </g>
+</svg>
