@@ -1,0 +1,116 @@
+/* app/globals.css — Thème NIOTO */
+@import "tailwindcss";
+
+/* ── Variables NIOTO ──────────────────────────────────────────────────────── */
+:root {
+  --nioto-or:      #D99A1E;
+  --nioto-ambre:   #A86B10;
+  --nioto-vert:    #1E3A2B;
+  --nioto-coton:   #FAF7F0;
+  --nioto-karite:  #EFE5CC;
+  --nioto-brun:    #2E2116;
+  --nioto-rouge:   #A82A22;
+  --nioto-or-light:#F5C84A;
+}
+
+@theme inline {
+  --color-nioto-or:     var(--nioto-or);
+  --color-nioto-ambre:  var(--nioto-ambre);
+  --color-nioto-vert:   var(--nioto-vert);
+  --color-nioto-coton:  var(--nioto-coton);
+  --color-nioto-karite: var(--nioto-karite);
+  --color-nioto-brun:   var(--nioto-brun);
+  --color-nioto-rouge:  var(--nioto-rouge);
+  --font-serif:  var(--font-fraunces);
+  --font-sans:   var(--font-manrope);
+}
+
+/* ── Base ──────────────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--nioto-coton);
+  color: var(--nioto-brun);
+  font-family: var(--font-manrope), system-ui, sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ── Typographie ───────────────────────────────────────────────────────────── */
+.font-serif  { font-family: var(--font-fraunces), Georgia, serif; }
+.font-sans   { font-family: var(--font-manrope), system-ui, sans-serif; }
+
+h1, h2, h3 { font-family: var(--font-fraunces), Georgia, serif; line-height: 1.05; }
+
+/* ── Titre Hero ────────────────────────────────────────────────────────────── */
+.hero-title {
+  font-size: clamp(3rem, 8vw, 7.5rem);
+  line-height: 1;
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* ── Section padding ──────────────────────────────────────────────────────── */
+.section-pad { padding-top: 6rem; padding-bottom: 6rem; }
+@media (min-width: 1024px) { .section-pad { padding-top: 8rem; padding-bottom: 8rem; } }
+
+/* ── Filets ────────────────────────────────────────────────────────────────── */
+.filet { border-top: 1px solid currentColor; opacity: 0.15; }
+
+/* ── Reveal (base — GSAP gère l'animation) ─────────────────────────────────── */
+.reveal { opacity: 0; transform: translateY(40px); will-change: opacity, transform; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ── Reduced motion ────────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1 !important; transform: none !important; }
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+/* ── Swiper overrides sobres ────────────────────────────────────────────────── */
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--nioto-or) !important;
+}
+.swiper-pagination-bullet-active {
+  background: var(--nioto-or) !important;
+}
+.swiper-pagination-bullet {
+  background: var(--nioto-brun);
+  opacity: 0.3;
+}
+
+/* ── Scrollbar fine ─────────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--nioto-coton); }
+::-webkit-scrollbar-thumb { background: var(--nioto-or); border-radius: 2px; }
+
+/* ── Autowrite cursor ──────────────────────────────────────────────────────── */
+.autowrite-cursor {
+  display: inline-block;
+  width: 3px;
+  height: 0.85em;
+  background: var(--nioto-or);
+  margin-left: 4px;
+  animation: blink 1s step-end infinite;
+  vertical-align: middle;
+}
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+/* ── Logo logotype provisoire ──────────────────────────────────────────────── */
+.logo-text {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  font-size: 1.5rem;
+}
+
+/* ── Process section ────────────────────────────────────────────────────────── */
+.process-step { opacity: 0; }
+.process-step.active { opacity: 1; }
