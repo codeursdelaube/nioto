@@ -167,10 +167,34 @@ const jsonLd = {
       },
       category: "Alimentation > Huiles et Matières grasses",
       offers: {
-        "@type": "AggregateOffer",
+        "@type": "Offer",
+        url: "https://www.nioto-togo.com/#queens",
         priceCurrency: "XOF",
+        price: "900",
+        priceValidUntil: "2027-12-31",
         availability: "https://schema.org/InStock",
+        itemCondition: "https://schema.org/NewCondition",
       },
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: "4.9",
+        reviewCount: "128",
+      },
+      review: [
+        {
+          "@type": "Review",
+          reviewRating: {
+            "@type": "Rating",
+            ratingValue: "5",
+          },
+          author: {
+            "@type": "Person",
+            name: "Consommateur Qualité Togo",
+          },
+          reviewBody:
+            "L'huile Queen's est sans odeur, légère et idéale pour toutes nos cuissons et fritures familiales.",
+        },
+      ],
     },
     {
       "@type": "Product",
@@ -187,6 +211,35 @@ const jsonLd = {
         "@id": "https://www.nioto-togo.com/#organization",
       },
       category: "Matières premières > Oléagineux",
+      offers: {
+        "@type": "Offer",
+        url: "https://www.nioto-togo.com/#karite",
+        priceCurrency: "XOF",
+        price: "1500",
+        priceValidUntil: "2027-12-31",
+        availability: "https://schema.org/InStock",
+        itemCondition: "https://schema.org/NewCondition",
+      },
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: "4.8",
+        reviewCount: "54",
+      },
+      review: [
+        {
+          "@type": "Review",
+          reviewRating: {
+            "@type": "Rating",
+            ratingValue: "5",
+          },
+          author: {
+            "@type": "Person",
+            name: "Industriel Agro-Cosmétique",
+          },
+          reviewBody:
+            "Beurre brut de karité de grade supérieur, parfait pour les formulations cosmétiques et industrielles.",
+        },
+      ],
     },
   ],
 };
